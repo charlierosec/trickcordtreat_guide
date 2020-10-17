@@ -1,0 +1,47 @@
+:root {
+	--dk-grey: #2F3B36;
+	--lt-grey: #36393F;
+
+	--dk-white: #8E8D78;
+	--lt-white: #BCDDD4;
+
+	--orange: #E28527;
+	--purple: #8D89DA;
+}
+
+body {
+	background-color: var(--lt-grey);
+	text-color: var(--lt-white);
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	margin: 1rem auto;
+	max-width: 100ch;
+}
+
+a {
+	color: var(--purple);
+	text-decoration: none;
+}
+
+hr {
+	border: 1px solid;
+	color: var(--dk-white);
+}
+
+table {
+	margin: 1rem auto;
+}
+
+
+td {
+	background-color: var(--dk-grey);
+	text-color: var(--dk-white)
+	border-radius: 2px;
+	padding: 5px; 
+}
+
+th {
+	background-color: var(--purple);
+	border-radius: 2px;
+	padding: 5px; 
+}
+

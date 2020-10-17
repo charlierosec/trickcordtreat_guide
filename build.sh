@@ -10,13 +10,17 @@ HTMLFILE="index.html"
 
 TABLE_HEADER="<tr><th>Common</th><th>Uncommon</th><th>Rare</th></tr>"
 HTMLCONTENT="
-<html><head><title>Trick\'cord Treat 2020 Guide</title></head>
+<html>
+<head>
+<title>Trick'cord Treat 2020 Guide</title>
+<link rel=\"stylesheet\" href=\"styles.css\">
+</head>
 <body>
 <p>
 	Hello my name is <a href=\"https://charlierose.dev\">Charlie</a> and I've
 	built this site as a guide for the monster drops for the 
 	<a href=\"https://blog.discord.com/discord-saves-halloween-7816b934c0b1\">
-	Discord Trick\'cord Treat 2020 Event</a>. I am in no way affiliated with
+	Discord Trick'cord Treat 2020 Event</a>. I am in no way affiliated with
 	Discord and all images are owned by them.
 </p>
 <hr>
