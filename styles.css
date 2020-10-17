@@ -11,10 +11,10 @@
 
 body {
 	background-color: var(--lt-grey);
-	text-color: var(--lt-white);
+	color: var(--lt-white);
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	margin: 1rem auto;
-	max-width: 100ch;
+	max-width: 80ch;
 }
 
 a {
@@ -22,9 +22,18 @@ a {
 	text-decoration: none;
 }
 
+h1, h2, h3{
+	color: var(--orange);
+}
+
 hr {
 	border: 1px solid;
 	color: var(--dk-white);
+}
+
+img {
+	width: 50%;
+	margin: 1rem auto;
 }
 
 table {
@@ -34,7 +43,7 @@ table {
 
 td {
 	background-color: var(--dk-grey);
-	text-color: var(--dk-white)
+	color: var(--dk-white)
 	border-radius: 2px;
 	padding: 5px; 
 }

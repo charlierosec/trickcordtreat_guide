@@ -16,6 +16,7 @@ HTMLCONTENT="
 <link rel=\"stylesheet\" href=\"styles.css\">
 </head>
 <body>
+<h1>Trick'cord Treat 2020 Monster Drop Guide</h1>
 <p>
 	Hello my name is <a href=\"https://charlierose.dev\">Charlie</a> and I've
 	built this site as a guide for the monster drops for the 
@@ -44,11 +45,11 @@ do
 	RARE_ITEM=`echo "${LINE}" | awk -F , '{print $4}'`
 	MONSTER_IMGFILE=`echo "imgs/${MONSTER_NAME}.png" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]'`
 
-	MONSTER_HEADER="<h3>${MONSTER_NAME}</h3>"
+	MONSTER_HEADER="<h2>${MONSTER_NAME}</h2>"
 	MONSTER_IMG="<a href=\"${MONSTER_IMGFILE}\"><img src=\"${MONSTER_IMGFILE}\" alt=\"${MONSTER_NAME} Image\"></a>"
 	MONSTER_TABLE="<table>${TABLE_HEADER}<tr><td>${COMMON_ITEM}</td><td>${UNCOMMON_ITEM}</td><td>${RARE_ITEM}</td></tr></table>"
 
-	HTMLCONTENT="${HTMLCONTENT}${MONSTER_HEADER}${MONSTER_IMG}${MONSTER_TABLE}<br>"
+	HTMLCONTENT="${HTMLCONTENT}${MONSTER_HEADER}${MONSTER_IMG}${MONSTER_TABLE}<hr>"
 done
 
 IFS=${OIFS}
