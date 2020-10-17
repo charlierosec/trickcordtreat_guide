@@ -44,9 +44,6 @@ do
 	RARE_ITEM=`echo "${LINE}" | awk -F , '{print $4}'`
 	MONSTER_IMGFILE=`echo "imgs/${MONSTER_NAME}.png" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]'`
 
-	echo ${LINE}
-	echo ${MONSTER_NAME}
-
 	MONSTER_HEADER="<h3>${MONSTER_NAME}</h3>"
 	MONSTER_IMG="<a href=\"${MONSTER_IMGFILE}\"><img src=\"${MONSTER_IMGFILE}\" alt=\"${MONSTER_NAME} Image\"></a>"
 	MONSTER_TABLE="<table>${TABLE_HEADER}<tr><td>${COMMON_ITEM}</td><td>${UNCOMMON_ITEM}</td><td>${RARE_ITEM}</td></tr></table>"
