@@ -25,7 +25,13 @@ HTMLCONTENT="
 	Discord and all images are owned by them.
 </p>
 <hr>
+<h2>Quick Nav</h2>
 "
+MONSTERCONTENT=" "
+
+NAV_TABLE="<table>"
+NAV_WIDTH=4
+CURR_TD=1
 
 echo "Building ${HTMLFILE} from ${MONSTERCSV}"
 
@@ -43,18 +49,33 @@ do
 	COMMON_ITEM=`echo "${LINE}" | awk -F , '{print $2}'`
 	UNCOMMON_ITEM=`echo "${LINE}" | awk -F , '{print $3}'`
 	RARE_ITEM=`echo "${LINE}" | awk -F , '{print $4}'`
-	MONSTER_IMGFILE=`echo "imgs/${MONSTER_NAME}.png" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]'`
+	MONSTER_NAMEEDIT=`echo "${MONSTER_NAME}" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]'`
+	MONSTER_IMGFILE="imgs/${MONSTER_NAMEEDIT}.png"
 
-	MONSTER_HEADER="<h2>${MONSTER_NAME}</h2>"
+	MONSTER_HEADER="<h2 id=\"${MONSTER_NAMEEDIT}\">${MONSTER_NAME}</h2>"
 	MONSTER_IMG="<a href=\"${MONSTER_IMGFILE}\"><img src=\"${MONSTER_IMGFILE}\" alt=\"${MONSTER_NAME} Image\"></a>"
 	MONSTER_TABLE="<table>${TABLE_HEADER}<tr><td>${COMMON_ITEM}</td><td>${UNCOMMON_ITEM}</td><td>${RARE_ITEM}</td></tr></table>"
 
-	HTMLCONTENT="${HTMLCONTENT}${MONSTER_HEADER}${MONSTER_IMG}${MONSTER_TABLE}<hr>"
+	MONSTERCONTENT="${MONSTERCONTENT}${MONSTER_HEADER}${MONSTER_IMG}${MONSTER_TABLE}<hr>"
+
+	MONSTER_LINK="<td><a href=\"#${MONSTER_NAMEEDIT}\">${MONSTER_NAME}</a></td>"
+	NAV_TABLE="${NAV_TABLE}${MONSTER_LINK}"
+
+	if [ ${CURR_TD} -lt ${NAV_WIDTH} ]
+	then
+		CURR_TD=$(( CURR_TD + 1 ))
+	else
+		CURR_TD=1
+		NAV_TABLE="${NAV_TABLE}</tr><tr>"
+	fi
+
 done
 
 IFS=${OIFS}
 
-HTMLCONTENT="${HTMLCONTENT}</body></html>"
+
+NAV_TABLE="${NAV_TABLE}</tr></table>"
+HTMLCONTENT="${HTMLCONTENT}${NAV_TABLE}<hr>${MONSTERCONTENT}</body></html>"
 
 
 echo "Done"
