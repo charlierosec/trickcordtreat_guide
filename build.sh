@@ -10,10 +10,16 @@ HTMLFILE="index.html"
 
 TABLE_HEADER="<tr><th>Common</th><th>Uncommon</th><th>Rare</th></tr>"
 HTMLCONTENT="
-<html>
+<html prefiix\"og: https://ogp.me/ns#\">
 <head>
 <title>Trick'cord Treat 2020 Guide</title>
 <link rel=\"stylesheet\" href=\"styles.css\">
+<link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">
+<meta propety=\"og:title\" content=\"Trick'cord Treat 2020 Guide\">
+<meta propety=\"og:type\" content=\"image/png\">
+<meta propety=\"og:url\" content=\"https://charlierosec.github.io/trickcordtreat_guide/\">
+<meta propety=\"og:image\" content=\"indexscreenshot.png\">
+
 </head>
 <body>
 <h1>Trick'cord Treat 2020 Monster Drop Guide</h1>
